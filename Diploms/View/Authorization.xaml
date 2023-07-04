@@ -1,0 +1,63 @@
+﻿<Page x:Class="Diplom.View.Authorization"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Diplom.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="800"
+      Title="Authorization" FontFamily="Consolas" FontSize="15">
+
+    <Grid Background="#3F566F">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="/Resources/logo.png" Width="90" Height="90" HorizontalAlignment="Left" Margin="10,0"/>
+        <TextBlock Text="Chase of Know" Grid.Row="0" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+            <TextBox x:Name="login" MaxLength="30" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="250" Height="30" BorderThickness="2" Background="#212D40" BorderBrush="{x:Null}">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <PasswordBox x:Name="password" MaxLength="30" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="250" Height="30" Margin="0,15,0,0">
+                <PasswordBox.Resources>
+                    <Style x:Key="{x:Type PasswordBox}" TargetType="{x:Type PasswordBox}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type PasswordBox}">
+                                    <Border CornerRadius="10" BorderThickness="2" BorderBrush="{x:Null}" Background="#212D40">
+                                        <ScrollViewer x:Name="PART_ContentHost"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </PasswordBox.Resources>
+            </PasswordBox>
+            <Button x:Name="registration" Content="Регистрация" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Width="130" Margin="0,5,0,0" Click="registration_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <Button x:Name="log" Width="150" Height="30" BorderBrush="{x:Null}" Background="#212D40" Foreground="White" BorderThickness="2" Content="Войти" IsDefault="True" Click="log_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="exit" Width="150" Height="30" Margin="25,0,0,0" Background="#212D40" BorderBrush="{x:Null}" Foreground="White" Content="Закрыть" BorderThickness="2" IsCancel="True" Click="exit_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>
