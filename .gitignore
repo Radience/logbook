@@ -2,3 +2,9 @@
 /logbook/bin/
 /logbook/obj/
 /logbook/packages/
+/logbook/Diplom.csproj
+/logbook/App.config
+/logbook/App.xaml
+/logbook/App.xaml.cs
+/logbook/Diplom.sln
+/logbook/packages.config
