@@ -1,0 +1,47 @@
+﻿<Page x:Class="Diplom.View.AdministatorMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Diplom.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="800"
+      Title="AdministatorMenu" FontSize="15" FontFamily="Consolas" Foreground="White">
+
+    <Grid Background="#3F566F">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Image Source="/Resources/logo.png" HorizontalAlignment="Left" Width="100" Height="90" Margin="10,0,0,0"/>
+        <TextBlock Text="Главное меню" Grid.Row="0" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="0,0,10,0">
+                <TextBlock Text="Администратор"/>
+            </StackPanel>
+            <Ellipse Width="90" Height="90" Margin="0,0,10,0">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="C:\Users\Radiance\source\repos\Diplom\bin\Debug\Image\person.png"/>
+                </Ellipse.Fill>
+            </Ellipse>
+        </StackPanel>
+        <DataGrid Grid.Row="1" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" x:Name="students" AutoGenerateColumns="False" Background="#FF9FBEDC" BorderBrush="{x:Null}" Foreground="Black">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding second_name}"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding name_}"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding patronymic}"/>
+                <DataGridTextColumn Header="Группа" Binding="{Binding groupa}"/>
+                <DataGridTextColumn Header="Кол-во пропусков" Binding="{Binding countNone}"/>
+                <DataGridTextColumn Header="Кол-во пропусков в часах" Binding="{Binding countNoneInTime}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="back" Width="150" Foreground="White" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Height="30" Background="#212D40" BorderBrush="{x:Null}" Content="Назад" IsCancel="True" Grid.Row="2" Click="back_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Page>
